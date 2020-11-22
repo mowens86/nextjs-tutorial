@@ -7,8 +7,10 @@ const name = 'Mike Owens';
 export const siteTitle = `Mike's Sample Website`;
 
 export default function Layout({ children, home }) {
+  
   return (
     <div className={styles.container}>
+      
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,6 +26,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      
       <header className={styles.header}>
         {home ? (
           <>
@@ -39,7 +42,7 @@ export default function Layout({ children, home }) {
             <Link href="/">
               <a>
                 <img
-                  src="/images/profile.jpg"
+                  src="/images/profile.png"
                   className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                   alt={name}
                 />
@@ -53,7 +56,9 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
+      
       <main>{children}</main>
+      
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
@@ -61,6 +66,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+    
     </div>
   )
 }
